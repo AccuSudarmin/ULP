@@ -25,7 +25,7 @@
 
       public function edit($id) {
 
-         $profile = $this->mprofile->getById($id);
+         $profile = $this->marticle->getById($id);
 
          $this->load->view('administrator/header');
    		$this->load->view('administrator/navbar');
