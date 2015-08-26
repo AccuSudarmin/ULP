@@ -13,12 +13,17 @@
 
          $this->load->view('head');
          $this->load->view('header');
-         $this->load->view('body-open', array(
-            'article' => $data,
-            'slider' => $dataslider
-
+         $this->load->view('body-open');
+         $this->load->view('left-sidebar');
+         $this->load->view('center-container-open');
+         $this->load->view('slider', array(
+            'slider'=> $dataslider
          ));
-         $this->load->view('slider');
+         $this->load->view('article-all', array(
+            'article' => $data
+         ));
+         $this->load->view('center-container-close');
+         $this->load->view('right-sidebar');
          $this->load->view('body-close');
          $this->load->view('footer');
       }
