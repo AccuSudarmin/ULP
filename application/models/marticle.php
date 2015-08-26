@@ -12,7 +12,7 @@
       }
 
       public function getByURL ($url) {
-         $result = $this->db->get_where('article' , array('articleURL' => $url))->row();
+         $result = $this->db->get_where('article' , array('arURL' => $url))->row();
 
          return $result;
       }
