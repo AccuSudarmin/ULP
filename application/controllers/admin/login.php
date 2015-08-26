@@ -24,11 +24,16 @@ class Login extends CI_Controller {
 		$data = $this->madmin->getByName($name);
 
 		if ($data) {
-			if ($data[0]['amPassword'] === $pass) {
+			//
+			// // $salt = $data['salt'];
+			// // $encrypted_pass = base64_encode(sha1($password . $salt, true) . $salt);
+			//
+
+			if ($data[0]->{'amPassword'} === $pass) {
 				$this->session->set_userdata('admin_ulp' , array(
-					'id' => $data[0]['amId'] ,
-					'name' => $data[0]['amName'],
-					'password' => $data[0]['amPassword']
+					'id' => $data[0]->{'amId'} ,
+					'name' => $data[0]->{'amName'},
+					'password' => $data[0]->{'amPassword'}
 				));
 
 				$result = array (
@@ -37,7 +42,8 @@ class Login extends CI_Controller {
 	            "delayURL" => 3000 ,
 	         );
 
-			} else {
+			}
+			 else {
 				$result = array (
 	            "message" => "Gagal Login" ,
 	            "type" => "modal-box" ,
