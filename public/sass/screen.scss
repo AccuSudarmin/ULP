@@ -1,0 +1,435 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "font-awesome.css";
+
+$warna1 : #eb2629;
+$warna2 : #ebebeb;
+$biruunhas : #0F68AA;
+$biruunhas2 : #80D1ED;
+$folderheader : #eb2629;
+$birubackground: #CCECFF;
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h2{
+  font-size: 130%;
+  margin-bottom: 10px;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+body {
+        background: $birubackground;
+        font-size: 14px;
+        font: 12px/18px Arial, Helvetica, sans-serif;
+
+
+    .body-wrapper{
+      margin-left: auto; margin-right: auto;
+      width: 96%; max-width: 960px;
+    }
+
+    div{
+      overflow: hidden;
+    }
+}
+
+
+.folder{
+  .title{
+    background: $warna1;
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .berita-terbaru{
+    border-bottom: 1px dotted $biruunhas;
+
+    h2{
+      font-weight: bold;
+    }
+
+    img{
+      width: 50%;
+      float:left;
+    }
+  }
+
+  .folder-fill-container{
+    margin: 10px;
+    padding-bottom:10px;
+
+    .meta-tag{
+      margin-top:5px;
+
+      a{
+        font-style: italic;
+        color: $biruunhas;
+        text-decoration: none;
+      }
+
+      a:hover{
+        font-weight: bold;
+      }
+
+    }
+  }
+
+  .folder-fill{
+     ul{
+        margin-bottom: 10px;
+        list-style: disc;
+        display: list-item;
+
+        li{
+          margin-left: 10px;
+          margin-top:5px;
+          display:list-item;
+
+
+          a{
+            font-weight: bold;
+            text-decoration: none;
+            color: $biruunhas;
+
+            &:hover{
+                text-decoration: underline;
+            }
+          }
+        }
+      }
+  }
+
+  background: $birubackground;
+    margin-top: 10px;
+
+}
+
+#body-wrapper{
+
+  background: #fff;
+
+  .left-sidebar{
+    width: 21%;
+  }
+
+  .center-container{
+    width: 51%;
+  }
+
+  .right-sidebar{
+    width: 21%;
+  }
+}
+
+.float-left{
+  float: left;
+}
+
+.isi{
+  background: #ebebeb;
+  margin-top:10px;
+
+  .isi-folder{
+    margin:10px;
+
+    table{
+      border-collapse: collapse;
+    display: table;
+    margin-bottom: 10px;
+    margin-top:10px;
+    width: 100%;
+    border-left: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+
+      td{
+        border-right: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+        padding: 10px
+
+      }
+
+    }
+
+    .title {
+      border-bottom: 2px solid #D6D4D4;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+
+        h2{
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .category{
+        font-style: italic;
+        font-size: 90%;
+
+        a{
+          text-decoration: none;
+          font-weight: bold;
+          color: #000;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .download-container{
+    background:#D6D4D4;
+
+    ul{
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+
+      li{
+        float:left;
+        padding:5px;
+
+        i{
+          color: $warna1;
+        }
+
+        a{
+          text-decoration: none;
+          color: $biruunhas;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+
+#header{
+  width: 100%;
+
+  #logo img{
+    width: 100%;
+    height: auto;
+    margin-bottom: -10px;
+
+  }
+
+  #menu {
+
+    background: $warna1;
+    color: white;
+    font-size: 105%;
+
+      a{
+        text-transform: capitalize;
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+         color: $biruunhas;
+         }
+      }
+
+
+      li{
+        float: left;
+        padding: 10px;
+
+        &:hover{
+           background: #C92427;
+        }
+
+        &:hover > ul{
+             display:block;
+            }
+
+
+
+           ul{
+            //  opacity: 0;
+            // //   visibility: hidden;
+            //   -webkit-transiton: opacity 0.2s;
+            //   -moz-transition: opacity 0.2s;
+            //   -ms-transition: opacity 0.2s;
+            //   -o-transition: opacity 0.2s;
+            //   -transition: opacity 0.2s;
+             display: none;
+             position: absolute;
+             z-index:1001;
+             color: #fff;
+             min-width:100px;
+             margin-top:10px;
+
+               li{
+                  display: block;
+                  padding: 10px 10px 10px 10px;
+                  margin-left: -10px;
+                  background:$warna1;
+                  float: none;
+                  position: relative;
+
+                  &:hover{
+                     background:#C92427;
+                     display: block !important;
+                  }
+
+                  ul{
+                     display: none;
+                     // margin-left: 50px;
+                     right: -110px;
+                     top: -10px;
+                  }
+               }
+
+            }
+
+         }
+
+
+
+      }
+  }
+
+
+
+
+.margin10px{
+  margin:10px;
+}
+
+#footer{
+  background: #414446;
+  color: #898D8E;
+  padding-bottom: 10px;
+
+  .footer-container{
+    width:95%;
+    min-height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-list{
+    width:15%;
+    padding:10px;
+    float: left;
+    position: relative;
+    display: block;
+    max-height: 100%;
+  }
+
+  h3{
+    font-size:110%;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom:10px;
+  }
+
+  ul{
+
+    li{
+      margin: 5px 0 5px 0px;
+    }
+    a{
+      text-decoration: none;
+      color:inherit;
+
+      &:hover{
+        color: $biruunhas;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+.slider{
+   margin-top:10px;
+   position: relative;
+
+   .ninja-wrap{
+      position: relative;
+      height:300px;
+      width:100%;
+
+   }
+
+   .slide{
+      position: absolute;
+      display: none;
+
+      img {
+         width:100%;
+         height:auto;
+      }
+
+   }
+
+   .slider-nav{
+
+      text-align: center;
+      padding-top:5px;
+
+
+      .slider-nav-wrapper{
+         margin-left: auto;
+         margin-right: auto;
+         // width: 35%;
+         display: inline-flex;
+      }
+
+      a{
+         float: left;
+         margin-right:5px;
+         margin-top:5px;
+      }
+
+      ul li{
+         float:left;
+         margin-right: 5px;
+      }
+
+      img{
+         width: 10px;
+         height: 10px;
+      }
+
+      .slider-dots{
+         font-size: 40px;
+         color: #ebebeb;
+      }
+
+   }
+
+
+}
+
+
+.activedot{
+   color: $biruunhas;
+}
+
+.activeslide{
+   display: block;
+}
