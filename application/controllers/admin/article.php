@@ -1,23 +1,23 @@
 <?php
    defined('BASEPATH') OR exit('No direct script access allowed');
 
-   class Profile extends CI_Controller
+   class Article extends CI_Controller
    {
       function __construct() {
          parent::__construct();
 
-         $this->load->model('mprofile');
+         $this->load->model('marticle');
       }
 
       public function index()  {
 
-         $profile = $this->mprofile->getAll();
+         $profile = $this->marticle->getAll();
 
          $this->load->view('administrator/header');
    		$this->load->view('administrator/navbar');
    		$this->load->view('administrator/sidebar');
-   		$this->load->view('administrator/profile/content' , array(
-            "profile" => $profile
+   		$this->load->view('administrator/article/content' , array(
+            "article" => $article
          ));
    		$this->load->view('administrator/footer');
 
