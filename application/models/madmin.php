@@ -5,7 +5,7 @@
       }
 
       public function getByName($name){
-         $result = $this->db->get_where('admin' , array('amName' => $name))->result();
+         $result = $this->db->get_where('admin' , array('amName' => $name))->row();
 
          return $result;
       }

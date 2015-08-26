@@ -29,11 +29,11 @@ class Login extends CI_Controller {
 			// // $encrypted_pass = base64_encode(sha1($password . $salt, true) . $salt);
 			//
 
-			if ($data[0]->{'amPassword'} === $pass) {
+			if ($data->amPassword === $pass) {
 				$this->session->set_userdata('admin_ulp' , array(
-					'id' => $data[0]->{'amId'} ,
-					'name' => $data[0]->{'amName'},
-					'password' => $data[0]->{'amPassword'}
+					'id' => $data->amId ,
+					'name' => $data->amName,
+					'password' => $data->amPassword
 				));
 
 				$result = array (

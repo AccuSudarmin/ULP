@@ -7,7 +7,7 @@
    <ul>
       <li class="first-level-menu active-side-menu">
          <a href="<?php echo site_url('/admin/dashboard'); ?>">
-            <img src="<?php echo base_url('public/img/home.png'); ?>" width="15px" style="margin-right:10px;">
+            <img src="<?php echo base_url('public/image/icon/home.png'); ?>" width="15px" style="margin-right:10px;">
             Dashboard
          </a>
       </li>
@@ -18,7 +18,7 @@
          <ul class="show">
             <li class="second-level-menu">
                <a href="<?php echo site_url('/admin/profile') ?>">
-                  <img src="<?php echo base_url('public/img/rencana.png'); ?>" width="15px" style="margin-right:10px;">
+                  <img src="<?php echo base_url('public/image/icon/rencana.png'); ?>" width="15px" style="margin-right:10px;">
                   Profil
                </a>
             </li>
@@ -31,7 +31,7 @@
          <ul class="show">
             <li class="second-level-menu">
                <a href="?ref=menu-manager">
-                  <img src="<?php echo base_url('public/img/rencana.png'); ?>" width="15px" style="margin-right:10px;">
+                  <img src="<?php echo base_url('public/image/icon/rencana.png'); ?>" width="15px" style="margin-right:10px;">
                   Profil
                </a>
             </li>

@@ -1,13 +1,6 @@
 <?php
    class Marticle extends CI_Model{
       function __construct(){
-         // $this->con = mysqli_connect('localhost', 'root', '', 'ulp');
-         //
-         // if(mysqli_connect_errno()){
-         //    echo "Failed to connect to the database : ".mysqli_connect_error();
-
-         // }
-         // $this->load->database();
          parent::__construct();
       }
 
@@ -16,6 +9,12 @@
 
          return $result;
 
+      }
+
+      public function getByURL ($url) {
+         $result = $this->db->get_where('article' , array('articleURL' => $url))->row();
+
+         return $result;
       }
    }
 ?>

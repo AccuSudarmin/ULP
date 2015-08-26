@@ -11,12 +11,12 @@
             <th> Judul </th>
             <th> Action </th>
          </tr>
-         <?php $i = 1; foreach($profile as $data): ?>
+         <?php $i = 1; foreach($profile->result() as $data): ?>
             <tr>
                <td> <?php echo $i; ?> </td>
-               <td> <?php echo $data['pfTitle']; ?> </td>
+               <td> <?php echo $data->{'pfTitle'}; ?> </td>
                <td>
-                  <a href="<?php echo site_url('/admin/profile/edit/' . $data['pfId']) ?>"> Edit </a>
+                  <a href="<?php echo site_url('/admin/profile/edit/' . $data->{'pfId'}) ?>"> Edit </a>
                </td>
             </tr>
          <?php $i++; endforeach; ?>

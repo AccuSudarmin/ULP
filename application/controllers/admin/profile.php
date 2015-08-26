@@ -42,8 +42,7 @@
          $title = $this->input->post('title');
          $content = $this->input->post('desc');
 
-         $result = $this->mprofile->update( array(
-            "pfId" => $id ,
+         $result = $this->mprofile->update( $id , array(
             "pfTitle" => $title ,
             "pfContent" => $content
          ));
@@ -61,7 +60,7 @@
          echo json_encode($data);
       }
 
-      public function delte() {
+      public function delete() {
 
       }
    }
