@@ -12,11 +12,15 @@
          $dataslider = $this->mslider->getSlider();
 
          $this->load->view('head');
-         $this->load->view('home', array(
+         $this->load->view('header');
+         $this->load->view('body-open', array(
             'article' => $data,
             'slider' => $dataslider
 
          ));
+         $this->load->view('slider');
+         $this->load->view('body-close');
+         $this->load->view('footer');
       }
 
    }
