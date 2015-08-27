@@ -37,7 +37,7 @@
       public function save(){
 
          $title = $this->input->post('title');
-         $desc = htmlentities($this->input->post('editor1'), ENT_QUOTES);
+         $desc = $this->input->post('desc');
          $date = time();
          $user = $this->session->userdata('admin_ulp');
          $url = str_replace(" " , "-" , strtolower($title));
@@ -78,6 +78,7 @@
             if ($result) {
                $data['message'] = "Data Berhasil Disimpan";
                $data['delayURL'] = 1000;
+               $data['success'] = false;
             } else {
                $data['message'] = "Data Gagal Disimpan";
                $data['success'] = false;
