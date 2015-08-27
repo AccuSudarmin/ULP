@@ -8,7 +8,7 @@
       }
 
       public function index(){
-         $data = $this->marticle->getAll();
+         $article = $this->marticle->getAll();
          $dataslider = $this->mslider->getSlider();
 
          $this->load->view('head');
@@ -20,7 +20,7 @@
             'slider'=> $dataslider
          ));
          $this->load->view('article-all', array(
-            'article' => $data
+            'article' => $article
          ));
          $this->load->view('center-container-close');
          $this->load->view('right-sidebar');

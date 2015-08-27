@@ -17,10 +17,25 @@
       }
 
       public function getAll(){
-         $result = $this->db->get('article');
 
-         return $result;
+         $this->db->select('*');
+         $this->db->from('article');
+         $this->db->join('admin', 'article.arAuthor = admin.amId');
 
+         $listArticle = array();
+         foreach ($this->db->get()->result() as $data) {
+            $obj = new stdClass();
+
+            foreach ($data as $key => $val) {
+               $obj->$key = $val;
+            }
+
+            $obj->arTgl = date('j F Y' , $data->arTgl);
+
+            $listArticle[] = $obj;
+         }
+
+         return $listArticle;
       }
 
       public function getByURL ($url) {

@@ -1,6 +1,6 @@
 <?php
    class Article extends CI_Controller{
-      public __construct(){
+      function __construct(){
          parent::__construct();
 
          $this->load->model('marticle');

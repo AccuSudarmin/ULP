@@ -37,10 +37,12 @@
       public function save(){
 
          $title = $this->input->post('title');
-         $desc = $this->input->post('desc');
+         $desc = htmlentities($this->input->post('editor1'), ENT_QUOTES);
          $date = time();
          $user = $this->session->userdata('admin_ulp');
-         $url = str_replace("&nbsp" , "-" , strtolower($title));
+         $url = str_replace(" " , "-" , strtolower($title));
+         $fileName = "";
+         $upload_success = true;
 
          $config['upload_path'] = './public/userfiles/image/';
          $config['file_name'] = $title;
@@ -50,21 +52,27 @@
 
          $data = array("type" => "modal-box");
 
-		   if ( ! $this->upload->do_upload("pict")) {
-			   $error = $this->upload->display_errors();
-            $data['message'] = "Data Gagal Disimpan";
-            $data['success'] = false;
+         if (!empty($_FILES['pict']['name'])) {
+   		   if ( ! $this->upload->do_upload("pict")) {
+   			   $error = $this->upload->display_errors();
+               $data['message'] = "Data Gagal Disimpan";
+               $data['success'] = false;
+               $upload_success = false;
 
-         } else {
-	         $file = $this->upload->data();
+            } else {
+   	         $file = $this->upload->data();
+               $fileName = $file['file_name'];
+   		   }
+         }
 
+         if ($upload_success) {
             $result = $this->marticle->addNew( array(
                "arTitle" => $title ,
                "arTgl" => $date ,
                "arAuthor" => $user['id'] ,
                "arContent" => $desc ,
                "arURL" => $url ,
-               "arImage" => $file['file_name']
+               "arImage" => $fileName
             ));
 
             if ($result) {
@@ -74,7 +82,7 @@
                $data['message'] = "Data Gagal Disimpan";
                $data['success'] = false;
             }
-		   }
+         }
 
          echo json_encode($data);
       }

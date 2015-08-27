@@ -18,7 +18,7 @@
             </p>
             <p>
                Deskripsi: <br>
-               <textarea name="desc" id="editor1"></textarea>
+               <textarea name="editor1" id="editor1"></textarea>
             </p>
             <p>
                Gambar: <br>

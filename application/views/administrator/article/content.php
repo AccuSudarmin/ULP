@@ -15,11 +15,11 @@
             <th> Author </th>
             <th> Action </th>
          </tr>
-         <?php $i = 1; foreach($article->result() as $data): ?>
+         <?php $i = 1; foreach($article as $data): ?>
             <tr>
                <td> <?php echo $i; ?> </td>
                <td> <?php echo $data->arTitle; ?> </td>
-               <td> <?php echo $data->arAuthor; ?> </td>
+               <td> <?php echo $data->amName; ?> </td>
                <td>
                   <a href="<?php echo site_url('/admin/article/edit/' . $data->arId) ?>"> Edit </a>
                </td>
