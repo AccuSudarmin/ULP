@@ -127,6 +127,7 @@ var hiccupFormController = function (form) {
 
          //check if key name exist, delete and adding new
          // if (formData.has(name)) formData.delete(name);
+         console.log(name , value);
          formData.append( name , value );
       }
 
