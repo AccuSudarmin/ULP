@@ -5,6 +5,9 @@
    </div>
 
    <div class="container960">
+      <div class="div-new-article right">
+         <a href="<?php echo site_url('/admin/article/add'); ?>">+ Tambahkan Artikel</a>
+      </div>
       <table border="1" class="table-class">
          <tr>
             <th> No </th>
@@ -18,7 +21,7 @@
                <td> <?php echo $data->arTitle; ?> </td>
                <td> <?php echo $data->arAuthor; ?> </td>
                <td>
-                  <a href="<?php echo site_url('/admin/profile/edit/' . $data->arId) ?>"> Edit </a>
+                  <a href="<?php echo site_url('/admin/article/edit/' . $data->arId) ?>"> Edit </a>
                </td>
             </tr>
          <?php $i++; endforeach; ?>

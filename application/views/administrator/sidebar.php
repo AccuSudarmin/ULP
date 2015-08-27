@@ -27,12 +27,12 @@
 
       <li>
          <input type="checkbox" id="content" style="display:none;">
-         <label for="content" class="category-title-menu">Content</label>
+         <label for="content" class="category-title-menu">KONTEN</label>
          <ul class="show">
             <li class="second-level-menu">
-               <a href="?ref=menu-manager">
+               <a href="<?php echo site_url('/admin/article'); ?>">
                   <img src="<?php echo base_url('public/image/icon/rencana.png'); ?>" width="15px" style="margin-right:10px;">
-                  Profil
+                  Artikel
                </a>
             </li>
          </ul>

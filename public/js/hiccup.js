@@ -62,7 +62,7 @@ var hiccupAjax = function (obj) {
       }
 
       xmlhttp.open("POST", obj.URLtarget , true);
-      xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      // xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       xmlhttp.send(obj.getValPost());
    }
 
@@ -102,10 +102,13 @@ var hiccupFormController = function (form) {
          , inputElm = ""
          , groupList = {};
 
+      var formData = new FormData();
+
       for (var i = 0; i < elem.length; i++) {
          var name = elem[i].name
-            , value = elem[i].value
             , group = elem[i].getAttribute("in-group") || false;;
+
+         var value = (elem[i].type == 'file') ? elem[i].files[0] : elem[i].value;
 
          if (group) {
             var obj = {};
@@ -117,18 +120,17 @@ var hiccupFormController = function (form) {
                groupList[group] = obj;
             }
 
-            if (i === 0) inputElm += "group=" + JSON.stringify(groupList)
-            else inputElm += "&group=" + JSON.stringify(groupList);
-
-         } else {
-
-            if (i === 0) inputElm += name + "=" + value
-            else inputElm += "&" + name + "=" + value;
+            name = "group";
+            value = JSON.stringify(groupList);
 
          }
+
+         //check if key name exist, delete and adding new
+         // if (formData.has(name)) formData.delete(name);
+         formData.append( name , value );
       }
 
-      return inputElm;
+      return formData;
    }
 
    var ElementBuild = function ( element , inner ){
