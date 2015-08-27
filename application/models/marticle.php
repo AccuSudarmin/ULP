@@ -39,10 +39,16 @@
       }
 
       public function getByURL ($url) {
-         $result = $this->db->get_where('article' , array('arURL' => $url))->row();
 
-         $result->arTgl = date('j F Y' , $result->arTgl);
+         $this->db->select('*');
+         $this->db->from('article');
+         $this->db->join('admin', 'article.arAuthor = admin.amId');
+         $this->db->where( array('arURL' => $url) );
 
+         $result = $this->db->get()->row();
+
+         $result->arTgl = date('j F Y', $result->arTgl);
+         
          return $result;
       }
    }

@@ -12,8 +12,8 @@
             <li> <a href="#"> Home </a> </li>
             <li class="dropdown"> <a href="#"> Profil </a>
                <ul>
-                    <li><a href="#"> Submenu1 </a> </li>
-                    <li> <a href="#"> Submenu2 </a> </li>
+                    <li><a href="#"> Sejarah </a> </li>
+                    <li> <a href="#"> Visi dan Misi </a> </li>
                     <li class="dropdown"> <a href="#"> Submenu3 </a>
                        <ul>
                        <li><a href="#"> Sub submenu 1 </a> </li>

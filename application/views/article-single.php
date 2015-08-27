@@ -1,13 +1,13 @@
 <div class="isi">
    <div class="isi-folder">
     <div class="title">
-       <h2> Lorem Ipsum </h2>
-       <div class="category"> Ditulis pada tanggal 31 Juli 2015, oleh admin, pada kategori <a href="#"> Berita </a> , <a href="#"> Pengumuman </a> </div>
+       <h2> <?php echo $article->arTitle;?> </h2>
+       <div class="category"> Ditulis pada tanggal <?php echo $article->amName;?>, oleh <?php echo $article->arAuthor; ?>, pada kategori <a href="#"> Berita </a> , <a href="#"> Pengumuman </a> </div>
     </div>
     <div class="folder-fill">
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       <?php echo $article->arContent;?>
 
-       <table width="100%" cellspacing="0" cellpadding="1">
+       <!-- <table width="100%" cellspacing="0" cellpadding="1">
             <tbody>
             <tr>
             <td width="150">Kode Lelang</td>
@@ -168,7 +168,7 @@
             </td>
             </tr>
             </tbody>
-            </table>
+            </table> -->
     </div> </div>
     <div class="download-container">
          <ul>
