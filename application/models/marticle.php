@@ -41,6 +41,8 @@
       public function getByURL ($url) {
          $result = $this->db->get_where('article' , array('arURL' => $url))->row();
 
+         $result->arTgl = date('j F Y' , $result->arTgl);
+
          return $result;
       }
    }
